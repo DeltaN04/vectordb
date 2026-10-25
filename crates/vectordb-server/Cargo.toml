@@ -1,0 +1,36 @@
+[package]
+name = "vectordb-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "vectordb HTTP + gRPC server."
+
+[dependencies]
+vectordb-core = { path = "../vectordb-core" }
+axum = "0.8"
+tonic = "0.14"
+tonic-prost = "0.14"
+prost = "0.14"
+tokio = { version = "1", features = ["full"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+toml = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"
+reqwest = { version = "0.12", features = ["json"] }
+tonic = { version = "0.14", features = ["transport"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["trace", "limit"] }
+prometheus = "0.13"
+
+[build-dependencies]
+tonic-prost-build = "0.14"
+
+[[bin]]
+name = "vectordb-server"
+path = "src/main.rs"

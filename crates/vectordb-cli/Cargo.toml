@@ -1,0 +1,13 @@
+[package]
+name = "vectordb-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+vectordb-core = { path = "../vectordb-core" }
+clap = { workspace = true }
+anyhow = { workspace = true }
+
+[[bin]]
+name = "vectordb"
+path = "src/main.rs"

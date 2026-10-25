@@ -1,0 +1,29 @@
+[package]
+name = "vectordb-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Embedded vector search engine core: distance kernels, HNSW, flat index, storage."
+repository = "https://github.com/example/vectordb"
+rust-version.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+rand.workspace = true
+rayon.workspace = true
+memmap2.workspace = true
+crc32fast.workspace = true
+bytemuck.workspace = true
+redb.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+tempfile.workspace = true
+criterion.workspace = true
+
+[[bench]]
+name = "distance"
+harness = false
